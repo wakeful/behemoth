@@ -1,0 +1,7 @@
+---
+- name: base packages
+  become: yes
+  hosts: all
+  remote_user: vagrant
+  roles:
+    - bootstrap
