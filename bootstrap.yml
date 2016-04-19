@@ -1,5 +1,5 @@
 ---
-- name: base packages
+- name: base bootstrap
   become: yes
   hosts: all
   remote_user: vagrant
