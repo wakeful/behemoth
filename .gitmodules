@@ -1,3 +1,6 @@
 [submodule "roles/bootstrap"]
 	path = roles/bootstrap
 	url = https://github.com/wakeful/ansible-role-bootstrap.git
+[submodule "roles/oh-my-zsh"]
+	path = roles/oh-my-zsh
+	url = https://github.com/wakeful/ansible-role-oh-my-zsh.git
