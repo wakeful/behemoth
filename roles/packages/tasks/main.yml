@@ -1,0 +1,13 @@
+---
+- name: install packages
+  become: yes
+  pkgng: name={{ item }} state=present
+  with_items:
+    - ezjail
+    - hashicorp-terraform
+    - git
+    - packer
+    - poudriere
+    - tmux
+    - vim-lite
+    - zsh
