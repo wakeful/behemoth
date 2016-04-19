@@ -1,0 +1,8 @@
+---
+- name: set system settings
+  become: yes
+  shell: sysrc {{ item }}
+  with_items:
+    - dumpdev=NO
+    - fsck_y_enable=YES
+    - syslogd_flags="-4 -b 127.0.0.1"
