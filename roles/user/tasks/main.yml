@@ -1,0 +1,22 @@
+---
+- name: create folders
+  file: path={{ item }} state=directory
+  with_items:
+    - ~/bin
+    - ~/laatu
+- name: vim -> vi
+  file: path=~/bin/vi src=/usr/local/bin/vim state=link
+- name: clone .dotfiles
+  git: depth=1 dest=~/laatu/dot repo=https://github.com/wakeful/.dotfiles.git
+       track_submodules=yes
+- name: install .dotfiles
+  shell: sudo cp -R -p {{ item }} ~/
+  with_items:
+    - ~/laatu/dot/*
+    - ~/laatu/dot/.*
+- name: install zsh plugins
+  git: depth=1 dest=~/.oh-my-zsh-custom/plugins/{{ item.name }}
+       repo={{ item.repo }}
+  with_items:
+    - { name: 'packer',
+        repo: 'https://github.com/wakeful/zsh-packer.git' }
