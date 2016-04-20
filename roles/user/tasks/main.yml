@@ -20,3 +20,5 @@
   with_items:
     - { name: 'packer',
         repo: 'https://github.com/wakeful/zsh-packer.git' }
+- name: install vim plugins
+  shell: vim +PluginInstall +qall
