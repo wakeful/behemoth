@@ -9,6 +9,7 @@
     - git
     - mutt
     - packer
+    - portlint
     - poudriere
     - tmux
     - vim-lite
