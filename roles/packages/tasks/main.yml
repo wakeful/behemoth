@@ -3,11 +3,14 @@
   become: yes
   pkgng: name={{ item }} state=present
   with_items:
+    - ansible
     - bsdadminscripts
+    - ca_root_nss
     - ezjail
     - hashicorp-terraform
     - git
     - irssi
+    - lsof
     - mutt
     - packer
     - portlint
