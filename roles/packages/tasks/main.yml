@@ -8,6 +8,7 @@
     - ca_root_nss
     - ezjail
     - git
+    - go
     - irssi
     - lsof
     - mutt
