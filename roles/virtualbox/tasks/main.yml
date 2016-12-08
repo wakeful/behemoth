@@ -1,0 +1,23 @@
+---
+- name: install packages
+  become: yes
+  pkgng: name={{ item }} state=present
+  with_items:
+    - virtualbox-ose
+    - virtualbox-ose-additions
+- name: set settings
+  become: yes
+  shell: sysrc {{ item }}
+  with_items:
+    - vboxnet_enable="YES"
+    - vboxguest_enable="YES"
+    - vboxservice_enable="YES"
+- name: load vboxdrv_module
+  become: yes
+  lineinfile: dest=/boot/loader.conf regexp="^vboxdrv_load=" line='vboxdrv_load="YES"'
+- name: current user name
+  command: whoami
+  register: sshusername
+- name: add current user to vboxusers group
+  become: yes
+  shell: pw groupmod vboxusers -m {{ sshusername.stdout }}
