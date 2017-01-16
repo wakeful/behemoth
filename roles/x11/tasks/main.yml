@@ -6,5 +6,11 @@
     - xfce
     - xdm
     - xorg
+- name: enable XDM
+  become: yes
+  lineinfile:
+    dest: /etc/ttys
+    regexp: '^ttyv8	"/usr/local/bin/xdm -nodaemon"'
+    line: 'ttyv8	"/usr/local/bin/xdm -nodaemon"	xterm	on  secure'
 - name: start dbus on system boot
   service: name=dbus enabled=yes
