@@ -14,7 +14,7 @@
     - vboxservice_enable="YES"
 - name: load vboxdrv_module
   become: yes
-  lineinfile: dest=/boot/loader.conf regexp="^vboxdrv_load=" line='vboxdrv_load="YES"'
+  shell: sysrc -f /boot/loader.conf vboxdrv_load="YES"
 - name: current user name
   command: whoami
   register: sshusername
