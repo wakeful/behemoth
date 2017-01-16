@@ -9,6 +9,7 @@
     - syslogd_flags="-4 -b 127.0.0.1"
   tags: rcconf
 - name: Only static DNS
+  become: yes
   copy: src=dhclient-enter-hooks dest=/etc/dhclient-enter-hooks owner=root group=wheel mode=0644
   tags: dns
 - name: DNS configuration
