@@ -13,4 +13,5 @@
     regexp: '^ttyv8	"/usr/local/bin/xdm -nodaemon"'
     line: 'ttyv8	"/usr/local/bin/xdm -nodaemon"	xterm	on  secure'
 - name: start dbus on system boot
+  become: yes
   service: name=dbus enabled=yes
