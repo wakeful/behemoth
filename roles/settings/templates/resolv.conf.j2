@@ -1,0 +1,6 @@
+{% if resolver_domain is defined %}
+domain {{dns_domain}}
+{% endif %}
+{% for nameserver in resolver_nameservers %}
+nameserver {{nameserver}}
+{% endfor %}

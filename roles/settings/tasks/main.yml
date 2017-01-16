@@ -7,3 +7,10 @@
     - fsck_y_enable=YES
     - ntpd_enable="YES"
     - syslogd_flags="-4 -b 127.0.0.1"
+- name: Only static DNS
+  copy: src=dhclient-enter-hooks dest=/etc/dhclient-enter-hooks owner=root group=wheel mode=0644
+  tags: dns
+- name: DNS configuration
+  become: yes
+  template: src=resolv.conf.j2 dest=/etc/resolv.conf owner=root group=wheel mode=0644
+  tags: dns
