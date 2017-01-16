@@ -6,3 +6,5 @@
     - xfce
     - xdm
     - xorg
+- name: start dbus on system boot
+  service: name=dbus enabled=yes
