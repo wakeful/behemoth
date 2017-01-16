@@ -6,3 +6,6 @@ dependencies:
 
 run:
 	ansible-playbook main.yml -i "localhost," --connection=local
+
+run-server:
+	ansible-playbook main.yml -i "localhost," --connection=local --skip-tags ui
