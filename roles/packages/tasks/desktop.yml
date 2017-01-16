@@ -1,0 +1,9 @@
+---
+- name: desktop packages
+  become: yes
+  pkgng: name={{ item }} state=present
+  with_items:
+    - emacs25
+    - firefox
+    - vagrant
+    - xorg-fonts

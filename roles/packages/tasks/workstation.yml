@@ -1,0 +1,13 @@
+---
+- name: workstation packages
+  become: yes
+  pkgng: name={{ item }} state=present
+  with_items:
+    # - ansible
+    - ezjail
+    - go
+    - irssi
+    - packer
+    - portlint
+    - poudriere
+    - terraform

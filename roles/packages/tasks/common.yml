@@ -1,0 +1,14 @@
+---
+- name: common packages
+  become: yes
+  pkgng: name={{ item }} state=present
+  with_items:
+    - bsdadminscripts
+    - ca_root_nss
+    - git
+    - lsof
+    - mutt
+    - sudo
+    - tmux
+    - vim-lite
+    - zsh

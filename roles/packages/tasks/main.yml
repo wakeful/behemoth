@@ -1,21 +1,7 @@
 ---
-- name: install packages
-  become: yes
-  pkgng: name={{ item }} state=present
-  with_items:
-    - ansible
-    - bsdadminscripts
-    - ca_root_nss
-    - ezjail
-    - git
-    - go
-    - irssi
-    - lsof
-    - mutt
-    - packer
-    - portlint
-    - poudriere
-    - terraform
-    - tmux
-    - vim-lite
-    - zsh
+- include: common.yml
+  tags: always
+- include: desktop.yml
+  tags: ui
+- include: workstation.yml
+  tags: tools
