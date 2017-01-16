@@ -1,7 +1,8 @@
 all: dependencies run
 
 dependencies:
-	@sudo pkg install -y ansible ca_root_nss python
+	@sudo pkg install -y ca_root_nss python py27-pip
+	@sudo sudo pip install ansible
 
 run:
 	ansible-playbook main.yml -i "localhost," --connection=local
