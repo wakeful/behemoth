@@ -6,7 +6,9 @@
     - bsdadminscripts
     - ca_root_nss
     - git
+    - htop
     - lsof
+    - minicom
     - mutt
     - sudo
     - tmux

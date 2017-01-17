@@ -4,6 +4,9 @@
   pkgng: name={{ item }} state=present
   with_items:
     - emacs25
+    - filezilla
     - firefox
     - vagrant
+    - vlc
+    - wireshark
     - xorg-fonts
