@@ -6,7 +6,14 @@
     - emacs25
     - filezilla
     - firefox
+    - openjdk8
     - vagrant
     - vlc
     - wireshark
     - xorg-fonts
+- name: mount fdescfs(5) and procfs(5)
+  become: yes
+  mount: name={{ item.name }} src={{ item.src }} fstype={{ item.fstype }} opts={{ item.opts }} state={{ item.state }}
+  with_items:
+    - { name: '/dev/fd', fstype: 'fdescfs', src: 'fdesc', opts: 'rw', state: 'mounted' }
+    - { name: '/proc', fstype: 'procfs', src: 'proc', opts: 'rw', state: 'mounted' }
