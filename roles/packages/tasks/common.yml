@@ -5,6 +5,7 @@
   with_items:
     - bsdadminscripts
     - ca_root_nss
+    - fzf
     - git
     - htop
     - lsof
