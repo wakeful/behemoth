@@ -4,8 +4,11 @@
   with_items:
     - ~/bin
     - ~/laatu
-- name: vim -> vi
-  file: path=~/bin/vi src=/usr/local/bin/vim state=link
+- name: local bin
+  file: path=~/bin/{{ item.name }} src={{ item.src }} state=link
+  with_items:
+   - { name: 'updatedb', src: '/usr/libexec/locate.updatedb' }
+   - { name: 'vi', src: '/usr/local/bin/vim' }
 - name: clone .dotfiles
   git: depth=1 dest=~/laatu/dot repo=https://github.com/wakeful/.dotfiles.git
        track_submodules=yes
