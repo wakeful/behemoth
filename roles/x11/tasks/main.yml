@@ -15,3 +15,12 @@
 - name: start dbus on system boot
   become: yes
   service: name=dbus enabled=yes
+- name: install i3
+  become: yes
+  pkgng: name:{{ item }} state=present
+  with_items:
+    - dmenu
+    - feh
+    - i3
+    - i3status
+    - xcompmgr
