@@ -7,6 +7,7 @@
     - filezilla
     - firefox
     - openjdk8
+    - tigervnc
     - vagrant
     - vlc
     - wireshark
