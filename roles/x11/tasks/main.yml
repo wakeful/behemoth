@@ -17,7 +17,7 @@
   service: name=dbus enabled=yes
 - name: install i3
   become: yes
-  pkgng: name:{{ item }} state=present
+  pkgng: name={{ item }} state=present
   with_items:
     - dmenu
     - feh
