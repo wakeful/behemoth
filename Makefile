@@ -1,7 +1,7 @@
 all: dependencies
 
 dependencies:
-	pkg install -y ca_root_nss python py27-pip || zypper install gcc libopenssl-devel python-devel python2-pip
+	pkg install -y ca_root_nss python py27-pip || zypper -n install gcc libopenssl-devel python-devel python2-pip
 	pip install ansible
 
 run:
