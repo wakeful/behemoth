@@ -14,5 +14,6 @@
     - rsync
     - sudo
     - tmux
+    - tree
     - vim-lite
     - zsh
